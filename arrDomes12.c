@@ -40,21 +40,7 @@ int isEmpty(struct Queue *q)
         return 1;  
     }
 }
-/*
-int isEmpty(struct Queue *q)
-{
-    if(q->size == 0)
-    {
-        printf("The Queue is Empty...\n");
-        return 0;
-    }
-    else
-    {
-        printf("The Queue is not Empty...\n");
-        return 1;  
-    }
-}
-*/
+
 /// SOS AUTO (GIA BOITHIS DES TO PDF LAB SEL 9-10)
 int isFull(struct Queue *q)
 {
