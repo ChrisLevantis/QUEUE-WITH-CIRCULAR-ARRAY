@@ -5,7 +5,7 @@
 struct Queue
 {
     int front, rear;
-    int size; // posa stixia ezi i lista ekini tin stigmi...
+    int size; // posa stixia ezi i oura ekini tin stigmi...
     int capacity; // auto einai gia tin desmeusi tou pinaka...
     int *array;
 };
@@ -65,7 +65,7 @@ void enqueue(struct Queue *q, int dataInserted)
     }
     else
     {
-        /// an exoume ena stixio stin oura, tote prepi na dmiourgisoume zexoristi periptosi
+        /// an den exoume ena stixio stin oura, tote prepi na dmiourgisoume zexoristi periptosi
         if(q->front == 0 && q->rear == 0 && q->size == 0)
         {
             q->array[q->rear] = dataInserted;
@@ -79,6 +79,7 @@ void enqueue(struct Queue *q, int dataInserted)
         {
             q->rear = 0;
             q->array[q->rear] = dataInserted;
+            q->size++;
             printf("TEST rear otan ftasi sto telos --> %d\n", q->rear);
             return;
         }
@@ -116,12 +117,14 @@ void dequeue(struct Queue *q)
         if(q->front == q->capacity - 1)
         {
             q->front = 0;
+            q->size--;
             printf("TEST FRONT EZO APO TIN IF ARXIKI --> %d\n", q->front);
             printf("Value dequeued is --> %d\n", temp);
             return;
         }
 
         q->front = (q->front + 1) % q->capacity;
+        q->size--;
         printf("TEST FRONT EZO APO TIN IF ARXIKI --> %d\n", q->front);
         printf("Value dequeued is --> %d\n", temp);
 
@@ -166,8 +169,6 @@ int main()
     isEmpty(queue);
 
     isFull(queue);
-
-    
-
+return 69;	
 
 }
